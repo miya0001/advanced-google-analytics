@@ -1,0 +1,15 @@
+{
+    "name": "miya0001/advanced-google-analytics",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "miya0001"
+        }
+    ],
+    "require": {
+        "php" : ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": {"AGA": "lib"}
+    }
+}

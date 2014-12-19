@@ -118,5 +118,16 @@ class Advanced_Google_Analytics_Test extends \WP_UnitTestCase {
 		$this->assertContains( "ga('create', 'xxxx', 'auto');", Utils::get_ga_code( 'xxxx' ) );
 		$this->assertContains( "ga('send', 'pageview');", Utils::get_ga_code( 'xxxx' ) );
 	}
+
+	/**
+	 * @test
+	 */
+	function get_script()
+	{
+		$this->assertSame( null, Utils::get_script() );
+
+		update_option( 'advanced_google_analytics_profile', 'xxxx' );
+		$this->assertContains( "<!-- Advanced Google Analytics -->", Utils::get_script() );
+	}
 }
 

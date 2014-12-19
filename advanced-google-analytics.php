@@ -41,15 +41,7 @@ class Advanced_Google_Analytics {
 
 	public function wp_head()
 	{
-		if ( ! get_option( 'advanced_google_analytics_profile' ) ) {
-			return;
-		}
-
-		echo "\n<!-- Advanced Google Analytics -->\n";
-		echo '<script type="text/javascript">';
-		echo \AGA\Utils::get_ga_code( get_option( 'advanced_google_analytics_profile' ) );
-		echo '</script>';
-		echo "\n<!-- /Advanced Google Analytics -->\n";
+		echo \AGA\Utils::get_script();
 	}
 
 	public function advanced_google_analytics_dimensions_labels( $labels )

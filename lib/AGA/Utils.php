@@ -8,6 +8,24 @@ class Utils {
 
 	private function __construct() {}
 
+
+	public static function get_script()
+	{
+		if ( ! get_option( 'advanced_google_analytics_profile' ) ) {
+			return;
+		}
+
+		$script = '';
+
+		$script .= "\n<!-- Advanced Google Analytics -->\n";
+		$script .= '<script type="text/javascript">';
+		$script .= self::get_ga_code( get_option( 'advanced_google_analytics_profile' ) );
+		$script .= '</script>';
+		$script .= "\n<!-- /Advanced Google Analytics -->\n";
+
+		return $script;
+	}
+
 	/**
 	 * Return the Google Anlytics code.
 	 *
